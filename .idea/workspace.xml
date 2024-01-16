@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="992ae7a6-0c86-48bd-af5b-330d69517acc" name="Changes" comment="add gitignore">
-      <change afterPath="$PROJECT_DIR$/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="992ae7a6-0c86-48bd-af5b-330d69517acc" name="Changes" comment="add main.js and new script" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,7 +54,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1705438714167</updated>
-      <workItem from="1705438717472" duration="1822000" />
+      <workItem from="1705438717472" duration="2122000" />
     </task>
     <task id="LOCAL-00001" summary="refactor index.html">
       <option name="closed" value="true" />
@@ -83,7 +80,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705439445529</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="add main.js and new script">
+      <option name="closed" value="true" />
+      <created>1705440882693</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1705440882693</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -100,7 +105,7 @@
                   <entry key="branch">
                     <value>
                       <list>
-                        <option value="romanenko-fep-16.01.2024" />
+                        <option value="main" />
                       </list>
                     </value>
                   </entry>
@@ -116,6 +121,7 @@
     <MESSAGE value="refactor index.html" />
     <MESSAGE value="delete idea" />
     <MESSAGE value="add gitignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="add gitignore" />
+    <MESSAGE value="add main.js and new script" />
+    <option name="LAST_COMMIT_MESSAGE" value="add main.js and new script" />
   </component>
 </project>
