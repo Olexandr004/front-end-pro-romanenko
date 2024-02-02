@@ -57,8 +57,8 @@ const users = [
 
 const filterBalance = users.filter(item => item.balance > 2000);
 const phoneNumbers = filterBalance.map(item => item.phone);
-const onlyBalance = filterBalance.map(item => item.balance);
-const totalBalance = onlyBalance.reduce((sum, current) => +sum + +current);
+const usersBalance = users.map(item => item.balance);
+const totalBalance = usersBalance.reduce((sum, current) => +sum + +current);
 
 console.log(phoneNumbers)
 console.log(totalBalance)
