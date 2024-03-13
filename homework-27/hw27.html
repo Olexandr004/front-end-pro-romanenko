@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Homework-27</title>
+    <script src="hw27.js" defer></script>
+    <style>
+        form {
+            background: grey;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            width: 40%;
+            margin: 0 auto;
+            padding: 10px;
+        }
+
+        input {
+            border-radius: 12px;
+            padding: 10px 8px;
+        }
+
+        td {
+            border: 2px solid;
+        }
+
+        textarea {
+            height: 80px;
+        }
+
+        button {
+            width: 50%;
+            margin: 0 auto;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+<body>
+
+<form action="#" id="formUser">
+    <input type="text" name="firstName" placeholder="Ім'я">
+    <input type="text" name="secondName" placeholder="Прізвище">
+    <input type="date" name="yearsOfBirth">
+
+    <label>Стать:
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="male">Чоловіча</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="female">Жіноча</label><br>
+    </label>
+
+    <label for="select">Місто:
+        <select name="city" id="select">
+            <option value="Kharkiv">Kharkiv</option>
+            <option value="Kyiv">Kyiv</option>
+            <option value="Dnipro">Dnipro</option>
+            <option value="Odesa">Odesa</option>
+            <option value="Lviv">Lviv</option>
+        </select>
+    </label>
+
+    <label for="address">Адреса:</label>
+    <textarea name="address" id='address' cols="30" rows="10" maxlength="80"></textarea>
+
+    <label>Знання мов:
+
+        <input type="checkbox" id="Ukrainian" name="language" value="Ukrainian">
+        <label for="Ukrainian">Українська</label>
+        <input type="checkbox" id="Russian" name="language" value="Russian">
+        <label for="Russian">Російська</label>
+        <input type="checkbox" id="English" name="language" value="English">
+        <label for="English">Англійська</label>
+    </label>
+
+    <button type="button">Зберегти</button>
+</form>
+
+<div id="table-container"></div>
+</body>
+</html>
