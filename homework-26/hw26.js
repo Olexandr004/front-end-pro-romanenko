@@ -1,14 +1,15 @@
-const laptop = document.getElementById('laptop')
-const phones = document.getElementById('phones')
-const household = document.getElementById('households')
-const clothes = document.getElementById('clothes')
 const listOfGoods = document.querySelectorAll('.cards')
+const categories = document.querySelectorAll('.categories li')
+
+const products = document.querySelectorAll('.cards div')
 const laptopsProducts = document.querySelectorAll('.laptop')
-const cards = document.querySelector('.card')
-let currentIndex = 0
+const phonesProducts = document.querySelectorAll('.phone')
+const householdProducts = document.querySelectorAll('.household')
+const clothesProducts = document.querySelectorAll('.cloth')
+const btn = document.querySelectorAll('.btn')
 
 const showGoods = (product, index) => {
-    product.forEach((item, ind ) => {
+    product.forEach((item, ind) => {
         if (ind === index) {
             item.style.display = 'flex'
         } else {
@@ -17,30 +18,54 @@ const showGoods = (product, index) => {
     })
 }
 
-laptop.addEventListener('click', (event) => {
-    showGoods(listOfGoods, 0)
-})
 
-phones.addEventListener('click', (event) => {
-    showGoods(listOfGoods,1)
-})
-
-household.addEventListener('click', (event) => {
-    showGoods(listOfGoods,2)
-})
-
-clothes.addEventListener('click', (event) => {
-    showGoods(listOfGoods, 3)
+categories.forEach(function (category, index) {
+    category.addEventListener('click', function () {
+        showGoods(listOfGoods, index)
+    })
 })
 
 
-cards.addEventListener('click', (event) => {
-    const target = event.target;
-    if (cards.classList.contains('laptop-1')) {
-        showGoods(laptopsProducts, 0)
-    } else {
-        showGoods(laptopsProducts,1)
-    }
+products.forEach(function (goods) {
+    goods.addEventListener('click', function () {
+        const productIndex = Array.from(goods.parentNode.children).indexOf(goods);
+        switch (true) {
+            case goods.classList.contains('laptop-list'):
+                showGoods(laptopsProducts, productIndex);
+                break;
+            case goods.classList.contains('phone-list'):
+
+                showGoods(phonesProducts, productIndex);
+                break;
+            case goods.classList.contains('household-list'):
+                showGoods(householdProducts, productIndex);
+                break;
+            case goods.classList.contains('clothes-list'):
+                showGoods(clothesProducts, productIndex);
+                break;
+        }
+    });
+});
+
+btn.forEach(item => {
+    item.addEventListener('click', (event) => {
+        const productName = item.closest('.product').querySelector('h1').textContent;
+
+        showGoods(listOfGoods)
+        showGoods(laptopsProducts)
+        showGoods(phonesProducts)
+        showGoods(clothesProducts)
+        showGoods(householdProducts)
+        alert(`Вітаємо ви успішно придбали ${productName}!`)
+    })
 })
+
+
+
 showGoods(listOfGoods)
 showGoods(laptopsProducts)
+showGoods(phonesProducts)
+showGoods(clothesProducts)
+showGoods(householdProducts)
+
+
