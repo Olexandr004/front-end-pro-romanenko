@@ -3,6 +3,11 @@
     margin: 0;
 }
 
+.container {
+    max-width: 1920px;
+    padding: 0 160px;
+}
+
 header {
     height: 100px;
     background: black;
@@ -80,7 +85,6 @@ h3 {
 .product {
     display: flex;
     flex-direction: column;
-    margin-right: 100px;
     height: 650px;
 }
 
