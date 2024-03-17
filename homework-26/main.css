@@ -41,6 +41,10 @@ header {
     font-size: 18px;
 }
 
+.categories li:hover {
+    color: red;
+}
+
 .card {
     display: flex;
     flex-direction: column;
@@ -93,5 +97,10 @@ h3 {
     font-size: 20px;
     color: white;
     cursor: pointer;
+    background: #4ecc4e;
+    padding: 8px 12px;
+}
+
+.btn:hover {
     background: #4de04d;
 }
