@@ -18,13 +18,20 @@ const showGoods = (product, index) => {
     })
 }
 
+const hideAllCategories  = () => {
+    showGoods(laptopsProducts)
+    showGoods(phonesProducts)
+    showGoods(clothesProducts)
+    showGoods(householdProducts)
+}
+
 
 categories.forEach(function (category, index) {
     category.addEventListener('click', function () {
         showGoods(listOfGoods, index)
+        hideAllCategories ()
     })
 })
-
 
 products.forEach(function (goods) {
     goods.addEventListener('click', function () {
@@ -34,7 +41,6 @@ products.forEach(function (goods) {
                 showGoods(laptopsProducts, productIndex);
                 break;
             case goods.classList.contains('phone-list'):
-
                 showGoods(phonesProducts, productIndex);
                 break;
             case goods.classList.contains('household-list'):
@@ -48,24 +54,16 @@ products.forEach(function (goods) {
 });
 
 btn.forEach(item => {
-    item.addEventListener('click', (event) => {
+    item.addEventListener('click', () => {
         const productName = item.closest('.product').querySelector('h1').textContent;
-
         showGoods(listOfGoods)
-        showGoods(laptopsProducts)
-        showGoods(phonesProducts)
-        showGoods(clothesProducts)
-        showGoods(householdProducts)
+        hideAllCategories ()
         alert(`Вітаємо ви успішно придбали ${productName}!`)
     })
 })
 
 
-
 showGoods(listOfGoods)
-showGoods(laptopsProducts)
-showGoods(phonesProducts)
-showGoods(clothesProducts)
-showGoods(householdProducts)
+hideAllCategories ()
 
 

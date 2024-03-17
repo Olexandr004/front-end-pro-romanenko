@@ -3,6 +3,17 @@
     margin: 0;
 }
 
+header {
+    height: 100px;
+    background: black;
+    margin-bottom: 10px;
+}
+
+.header-name img {
+    height: 80px;
+    margin: 10px 10px;
+}
+
 .sec-1 {
     display: flex;
     gap: 10px;
@@ -27,6 +38,7 @@
     align-items: center;
     gap: 5px;
     cursor: pointer;
+    font-size: 18px;
 }
 
 .card {
@@ -34,13 +46,16 @@
     flex-direction: column;
     justify-content: space-between;
     gap: 5px;
-    border: 1px solid grey;
-    width: 150px;
+    border: 1px solid #e3dbdb;
+    width: 175px;
+    height: 300px;
     padding: 10px;
+    cursor: pointer;
 }
 
 .card img {
-    height: 125px;
+    height: 200px;
+    object-fit: contain;
 }
 
 .cards {
@@ -49,6 +64,34 @@
     gap: 10px;
     width: 45%;
 }
-.product-information {
-    width: 40%;
+
+#product-info {
+    width: 45%;
+}
+
+h3 {
+    color: red;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    margin-right: 100px;
+    height: 650px;
+}
+
+.product img {
+    height: 350px;
+    object-fit: contain;
+}
+
+.btn {
+    width: 25%;
+    margin: 0 auto;
+    border: none;
+    border-radius: 12px;
+    font-size: 20px;
+    color: white;
+    cursor: pointer;
+    background: #4de04d;
 }
