@@ -452,8 +452,31 @@
 					<button class="btn">Купить</button>
 				</div>
 			</div>
-		
+			
+			<form action="#" class="customer-form">
+				<input type="text" placeholder="Прізвище" name="second-name" required>
+				<input type="text" placeholder="Ім'я" name="name">
+				<input type="text" placeholder="По батькові" name="patronymic">
+				<select name="city">
+					<option value="Kharkiv">Харків</option>
+					<option value="Kyiv">Київ</option>
+					<option value="Odessa">Одеса</option>
+					<option value="Lviv">Львів</option>
+					<option value="Vinnytsia">Вінниця</option>
+					<option value="Poltava">Полтава</option>
+				</select>
+				<input type="text" placeholder="Склад нової пошти" name="number-nova-poshta">
+				<label for="pay-after-order">Оплата при получении товара</label>
+				<input type="radio" id="pay-after-order" name="pay" value="pay-after-order">
+				<label for="prepayment">Полная предоплата</label>
+				<input type="radio" id="prepayment" name="pay" value="prepayment">
+				<input type="text" name="quantity">
+				<textarea placeholder="Комментарий" name="comment"></textarea>
+				<button type="button" class="submit">Оформить заказ</button>
+			</form>
+			<div id="table-customer"></div>
 		</section>
+		
 	</div>
 </main>
 <footer></footer>

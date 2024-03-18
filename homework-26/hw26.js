@@ -18,7 +18,7 @@ const showGoods = (product, index) => {
     })
 }
 
-const hideAllCategories  = () => {
+const hideAllCategories = () => {
     showGoods(laptopsProducts)
     showGoods(phonesProducts)
     showGoods(clothesProducts)
@@ -29,7 +29,7 @@ const hideAllCategories  = () => {
 categories.forEach(function (category, index) {
     category.addEventListener('click', function () {
         showGoods(listOfGoods, index)
-        hideAllCategories ()
+        hideAllCategories()
     })
 })
 
@@ -56,14 +56,38 @@ products.forEach(function (goods) {
 btn.forEach(item => {
     item.addEventListener('click', () => {
         const productName = item.closest('.product').querySelector('h1').textContent;
-        showGoods(listOfGoods)
-        hideAllCategories ()
-        alert(`Вітаємо ви успішно придбали ${productName}!`)
+        const formCustomer = document.querySelector('.customer-form')
+        const submit = document.querySelector('.submit')
+        formCustomer.style.display = 'flex'
+
+        submit.addEventListener('click', () => {
+            const tableCustomer = document.getElementById('table-customer');
+            const formData = new FormData(formCustomer);
+            const table = document.createElement('table')
+            const h4 = document.createElement('h4')
+            const p = document.createElement('p')
+
+            formData.forEach((value, key) => {
+                const row = table.insertRow();
+                const cell1 = row.insertCell(0);
+                const cell2 = row.insertCell(1);
+
+                cell1.textContent = key;
+                cell2.textContent = value;
+            });
+
+            tableCustomer.appendChild(h4)
+            h4.textContent = `Вітаємо!Ви упішно придбали ${productName}`
+            tableCustomer.appendChild(table);
+            tableCustomer.style.left = '100px'
+            formCustomer.style.display = 'none'
+            setTimeout(() => tableCustomer.style.display = 'none', 5000)
+        })
     })
 })
 
 
 showGoods(listOfGoods)
-hideAllCategories ()
+hideAllCategories()
 
 
