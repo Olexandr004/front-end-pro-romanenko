@@ -54,7 +54,6 @@ products.forEach(function (goods) {
 });
 
 btn.forEach(item => {
-    const regex = /^[0-9]+$/;
     item.addEventListener('click', () => {
         const productName = item.closest('.product').querySelector('h1').textContent;
         const formCustomer = document.querySelector('.customer-form');
