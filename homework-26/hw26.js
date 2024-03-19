@@ -54,38 +54,78 @@ products.forEach(function (goods) {
 });
 
 btn.forEach(item => {
+    const regex = /^[0-9]+$/;
     item.addEventListener('click', () => {
         const productName = item.closest('.product').querySelector('h1').textContent;
-        const formCustomer = document.querySelector('.customer-form')
-        const submit = document.querySelector('.submit')
-        formCustomer.style.display = 'flex'
+        const formCustomer = document.querySelector('.customer-form');
+        const submit = document.querySelector('.submit');
+        formCustomer.style.display = 'flex';
 
-        submit.addEventListener('click', () => {
-            const tableCustomer = document.getElementById('table-customer');
-            const formData = new FormData(formCustomer);
-            const table = document.createElement('table')
-            const h4 = document.createElement('h4')
-            const p = document.createElement('p')
-
-            formData.forEach((value, key) => {
-                const row = table.insertRow();
-                const cell1 = row.insertCell(0);
-                const cell2 = row.insertCell(1);
-
-                cell1.textContent = key;
-                cell2.textContent = value;
-            });
-
-            tableCustomer.appendChild(h4)
-            h4.textContent = `Вітаємо!Ви упішно придбали ${productName}`
-            tableCustomer.appendChild(table);
-            tableCustomer.style.left = '100px'
+        document.querySelector('.close-form').addEventListener('click', () => {
             formCustomer.style.display = 'none'
-            setTimeout(() => tableCustomer.style.display = 'none', 5000)
         })
-    })
-})
 
+        formCustomer.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            const quantity = formCustomer.elements.quantity;
+            const pay = formCustomer.elements.pay;
+            const isValidQuantity = validateText(quantity.value);
+            const isValidPay = checkRadioValidity(pay);
+
+            if (isValidQuantity && isValidPay) {
+                handleSubmit(productName, formCustomer, submit);
+            } else {
+                if (!isValidQuantity) {
+                    quantity.style.outline = '2px solid red';
+                    alert('Заполни форму корректно!');
+                }
+                if (!isValidPay) {
+                    alert('Выбери способ оплаты!');
+                }
+            }
+        });
+    });
+});
+
+function handleSubmit(productName, formCustomer, submit) {
+    submit.addEventListener('click', () => {
+        const tableCustomer = document.getElementById('table-customer');
+        const h4 = document.querySelector('h4');
+
+        tableCustomer.style.display = 'flex';
+        h4.textContent = `Поздравляем! Вы успешно купили ${productName}`;
+        tableCustomer.style.left = '100px';
+        formCustomer.style.display = 'none';
+
+        const formData = new FormData(formCustomer);
+        formData.forEach((value, key) => {
+            const td = document.querySelector(`td[data-name='${key}']`);
+            if (td) {
+                td.textContent = value;
+            }
+        });
+
+        const close = document.querySelector('.close');
+        close.addEventListener('click', () => {
+            tableCustomer.style.display = 'none';
+        });
+    });
+}
+
+function validateText(value) {
+    const regex = /^[0-9]+$/;
+    return regex.test(value);
+}
+
+function checkRadioValidity(radioButtons) {
+    for (const radioButton of radioButtons) {
+        if (radioButton.checked) {
+            return true;
+        }
+    }
+    return false;
+}
 
 showGoods(listOfGoods)
 hideAllCategories()

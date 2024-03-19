@@ -93,8 +93,8 @@ h3 {
     object-fit: contain;
 }
 
-.btn {
-    width: 25%;
+.btn-all {
+    width: 40%;
     margin: 0 auto;
     border: none;
     border-radius: 12px;
@@ -105,7 +105,7 @@ h3 {
     padding: 8px 12px;
 }
 
-.btn:hover {
+.btn-all:hover {
     background: #4de04d;
 }
 
@@ -114,6 +114,8 @@ h3 {
     flex-direction: column;
     position: absolute;
     background: grey;
+    max-width: 500px;
+    width: 100%;
     border-radius: 12px;
     padding: 20px;
     top: 50%;
@@ -121,10 +123,27 @@ h3 {
     transform: translate(-50%, -50%);
 }
 
-#table-customer {
-    position: absolute;
-    bottom: 20px;
-    left: -200px;
-    transition: 2s all;
-    width: 300px;
+.customer-form input, select, textarea {
+    padding: 8px 12px;
+    margin: 10px 0;
+    border-radius: 12px;
 }
+
+#table-customer {
+    position: fixed;
+    bottom: 20px;
+    left: -600px;
+    transition: 2s all;
+    width: 500px;
+    background: #d0c4c4;
+    border-radius: 12px;
+    padding: 8px;
+}
+
+.close, .close-form {
+    cursor: pointer;
+    text-align: right;
+}
+
+
+

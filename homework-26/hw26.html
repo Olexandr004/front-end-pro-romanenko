@@ -127,7 +127,7 @@
 							<th>1920x1200</th>
 						</tr>
 					</table>
-					<button class="btn">Купить</button>
+					<button class="btn btn-all">Купить</button>
 				</div>
 				<div class="laptop product">
 					<img src="./img/laptop-2.webp" alt="">
@@ -158,7 +158,7 @@
 							<th>1920x1200</th>
 						</tr>
 					</table>
-					<button class="btn">Купить</button>
+					<button class="btn btn-all">Купить</button>
 				</div>
 				<div class="laptop product">
 					<img src="./img/laptop-3.webp" alt="">
@@ -189,7 +189,7 @@
 							<th>1920x1200</th>
 						</tr>
 					</table>
-					<button class="btn">Купить</button>
+					<button class="btn btn-all">Купить</button>
 				</div>
 				<div class="phone product">
 					<img src="./img/phone-1.webp" alt="">
@@ -215,7 +215,7 @@
 							<th>2340 x 1080</th>
 						</tr>
 					</table>
-					<button class="btn">Купить</button>
+					<button class="btn btn-all">Купить</button>
 				</div>
 				<div class="phone product">
 					<img src="./img/phone-2.webp" alt="">
@@ -241,7 +241,7 @@
 							<th>2796x1290</th>
 						</tr>
 					</table>
-					<button class="btn">Купить</button>
+					<button class="btn btn-all">Купить</button>
 				</div>
 				<div class="phone product">
 					<img src="./img/phone-3.webp" alt="">
@@ -268,7 +268,7 @@
 							<th>QHD+ (3120x1440)</th>
 						</tr>
 					</table>
-					<button class="btn">Купить</button>
+					<button class="btn btn-all">Купить</button>
 				</div>
 				<div class="household product">
 					<img src="./img/household-1.webp" alt="">
@@ -298,7 +298,7 @@
 							<th>B</th>
 						</tr>
 					</table>
-					<button class="btn">Купить</button>
+					<button class="btn btn-all">Купить</button>
 				</div>
 				<div class="household product">
 					<img src="./img/household-2.webp" alt="">
@@ -332,7 +332,7 @@
 							<th>А</th>
 						</tr>
 					</table>
-					<button class="btn">Купить</button>
+					<button class="btn btn-all">Купить</button>
 				</div>
 				<div class="household product">
 					<img src="./img/household-3.webp" alt="">
@@ -362,7 +362,7 @@
 							<th>273 л</th>
 						</tr>
 					</table>
-					<button class="btn">Купить</button>
+					<button class="btn btn-all">Купить</button>
 				</div>
 				<div class="cloth product">
 					<img src="./img/clothes-1.webp" alt="">
@@ -393,7 +393,7 @@
 							<th>Двойка</th>
 						</tr>
 					</table>
-					<button class="btn">Купить</button>
+					<button class="btn btn-all">Купить</button>
 				</div>
 				<div class="cloth product">
 					<img src="./img/clothes-2.webp" alt="">
@@ -423,7 +423,7 @@
 							<th>Серый</th>
 						</tr>
 					</table>
-					<button class="btn">Купить</button>
+					<button class="btn btn-all">Купить</button>
 				</div>
 				<div class="cloth product">
 					<img src="./img/clothes-3.webp" alt="">
@@ -449,34 +449,81 @@
 							<th>Шнурки</th>
 						</tr>
 					</table>
-					<button class="btn">Купить</button>
+					<button class="btn btn-all">Купить</button>
 				</div>
 			</div>
 			
 			<form action="#" class="customer-form">
-				<input type="text" placeholder="Прізвище" name="second-name" required>
-				<input type="text" placeholder="Ім'я" name="name">
-				<input type="text" placeholder="По батькові" name="patronymic">
+				<div class="close-form"><img src="./img/cross.svg" alt=""></div>
+				<input type="text" placeholder="Фамилия" name="second-name" required>
+				<input type="text" placeholder="Имя" name="name" required>
+				<input type="text" placeholder="Отчество" name="patronymic" required>
+				
 				<select name="city">
-					<option value="Kharkiv">Харків</option>
-					<option value="Kyiv">Київ</option>
-					<option value="Odessa">Одеса</option>
-					<option value="Lviv">Львів</option>
-					<option value="Vinnytsia">Вінниця</option>
+					<option value="Kharkiv">Харьков</option>
+					<option value="Kyiv">Киев</option>
+					<option value="Odessa">Одесса</option>
+					<option value="Lviv">Львов</option>
+					<option value="Vinnytsia">Винница</option>
 					<option value="Poltava">Полтава</option>
 				</select>
-				<input type="text" placeholder="Склад нової пошти" name="number-nova-poshta">
-				<label for="pay-after-order">Оплата при получении товара</label>
-				<input type="radio" id="pay-after-order" name="pay" value="pay-after-order">
-				<label for="prepayment">Полная предоплата</label>
-				<input type="radio" id="prepayment" name="pay" value="prepayment">
-				<input type="text" name="quantity">
+				
+				<input type="text" placeholder="Номер отделения Новой Почты" name="number-nova-poshta" required>
+				
+				<label for="pay-after-order">Оплата при получении товара
+					<input type="radio" id="pay-after-order" name="pay" value="pay-after-order">
+				</label>
+				
+				<label for="prepayment">Полная предоплата
+					<input type="radio" id="prepayment" name="pay" value="prepayment">
+				</label>
+				
+				<input type="text" name="quantity" placeholder="Количество" required>
 				<textarea placeholder="Комментарий" name="comment"></textarea>
-				<button type="button" class="submit">Оформить заказ</button>
+				<button type="submit" class="submit btn-all">Оформить заказ</button>
 			</form>
-			<div id="table-customer"></div>
+			<div id="table-customer">
+				<h4></h4>
+				
+				<table>
+					<tr>
+						<th>Фамилия:</th>
+						<td data-name="second-name"></td>
+					</tr>
+					<tr>
+						<th>Имя:</th>
+						<td data-name="name"></td>
+					</tr>
+					<tr>
+						<th>Отчество:</th>
+						<td data-name="patronymic"></td>
+					</tr>
+					<tr>
+						<th>Город:</th>
+						<td data-name="city"></td>
+					</tr>
+					<tr>
+						<th>Номер отделения новой почти:</th>
+						<td data-name="number-nova-poshta"></td>
+					</tr>
+					<tr>
+						<th>Оплата:</th>
+						<td data-name="pay"></td>
+					</tr>
+					<tr>
+						<th>Количество:</th>
+						<td data-name="quantity"></td>
+					</tr>
+					<tr>
+						<th>Комментарий:</th>
+						<td data-name="comment"></td>
+					</tr>
+				</table>
+				
+				<div class="close"><img src="./img/cross.svg" alt=""></div>
+			</div>
 		</section>
-		
+	
 	</div>
 </main>
 <footer></footer>
