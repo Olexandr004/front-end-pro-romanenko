@@ -106,6 +106,8 @@ function handleSubmit(productName, formCustomer, submit) {
             }
         });
 
+        formCustomer.reset();
+
         const close = document.querySelector('.close');
         close.addEventListener('click', () => {
             tableCustomer.style.display = 'none';
