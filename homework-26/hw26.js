@@ -58,10 +58,11 @@ btn.forEach(item => {
         const productName = item.closest('.product').querySelector('h1').textContent;
         const formCustomer = document.querySelector('.customer-form');
         const submit = document.querySelector('.submit');
-        formCustomer.style.display = 'flex';
+        formCustomer.classList.add('display-flex')
+        formCustomer.classList.remove('display-none')
 
         document.querySelector('.close-form').addEventListener('click', () => {
-            formCustomer.style.display = 'none'
+            formCustomer.classList.add('display-none');
         })
 
         formCustomer.addEventListener('submit', (event) => {
@@ -89,13 +90,14 @@ btn.forEach(item => {
 
 function handleSubmit(productName, formCustomer, submit) {
     submit.addEventListener('click', () => {
-        const tableCustomer = document.getElementById('table-customer');
+        const tableCustomer = document.querySelector('.table-customer');
         const h4 = document.querySelector('h4');
 
-        tableCustomer.style.display = 'flex';
+        tableCustomer.classList.remove('display-none')
+        tableCustomer.classList.add('display-flex')
         h4.textContent = `Поздравляем! Вы успешно купили ${productName}`;
-        tableCustomer.style.left = '100px';
-        formCustomer.style.display = 'none';
+        tableCustomer.classList.add('left-message')
+        formCustomer.classList.add('display-none');
 
         const formData = new FormData(formCustomer);
         formData.forEach((value, key) => {
@@ -109,7 +111,8 @@ function handleSubmit(productName, formCustomer, submit) {
 
         const close = document.querySelector('.close');
         close.addEventListener('click', () => {
-            tableCustomer.style.display = 'none';
+            tableCustomer.classList.add('display-none')
+            tableCustomer.classList.remove('left-message')
         });
     });
 }

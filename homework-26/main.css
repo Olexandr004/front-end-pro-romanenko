@@ -129,7 +129,7 @@ h3 {
     border-radius: 12px;
 }
 
-#table-customer {
+.table-customer {
     position: fixed;
     bottom: 20px;
     left: -600px;
@@ -144,5 +144,16 @@ h3 {
     cursor: pointer;
 }
 
+.display-flex {
+    display: flex;
+}
+
+.display-none {
+    display: none;
+}
+
+.left-message {
+    left: 100px;
+}
 
 
