@@ -1,6 +1,7 @@
 * {
     padding: 0;
     margin: 0;
+    list-style-type: none;
 }
 
 .container {
@@ -156,4 +157,28 @@ h3 {
     left: 100px;
 }
 
+.my-orders {
+    width: auto;
+}
 
+.order-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.order-list li{
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    cursor: pointer;
+    border-bottom: 2px solid;
+}
+
+.order-list li p, span {
+    white-space: nowrap;
+}
+
+.orders-table {
+    max-width: 600px;
+}
