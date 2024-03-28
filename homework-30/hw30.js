@@ -7,7 +7,7 @@ const speed = document.getElementById('speed');
 const deg = document.getElementById('deg');
 const icon = document.getElementById('icon');
 
-const apiUrl = `http://api.openweathermap.org/data/2.5/weather?q=KHARKIV&units=metric&APPID=5d066958a60d315387d9492393935c19`;
+const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=KHARKIV&units=metric&APPID=5d066958a60d315387d9492393935c19`;
 
 const xml = new XMLHttpRequest();
 xml.open('GET', apiUrl);
@@ -23,7 +23,7 @@ xml.onreadystatechange = function () {
         speed.textContent = `Speed: ${response.wind.speed}`;
         deg.textContent = `Deg: ${response.wind.deg}`;
 
-        const iconUrl = `http://openweathermap.org/img/w/${response.weather[0].icon}.png`;
+        const iconUrl = `https://openweathermap.org/img/w/${response.weather[0].icon}.png`;
         icon.setAttribute('src', iconUrl)
 
     }
